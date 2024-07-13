@@ -29,7 +29,9 @@ public class MyCoolPlugin extends BaseCoolPlugin {
      * 使用缓存，使用cool-admin的缓存，开发的时候只是模拟
      */
     private void useCache() {
-        invokeMain("coolCache", "set", "a", "b");
+        // 调用主应用设置缓存
+        invokeMain("coolCache", "set", "a", "一个项目用COOL就够了");
+        // 调用主应用获取缓存
         Object cache =
             invokeMain("coolCache", "get", "a");
         System.out.println("缓存结果：" + cache);
@@ -50,6 +52,7 @@ public class MyCoolPlugin extends BaseCoolPlugin {
     private void getParentResource() {
         ClassLoader classLoader = getClass().getClassLoader();
         ClassLoader parentClassLoader = classLoader.getParent();
+        // 获取主应用resources下的 banner.txt 文件内容
         InputStream inputStream = parentClassLoader.getResourceAsStream("banner.txt");
         System.out.println(StrUtil.str(IoUtil.readBytes(inputStream), "UTF-8"));
     }
