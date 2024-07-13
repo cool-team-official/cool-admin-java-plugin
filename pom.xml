@@ -22,6 +22,10 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
@@ -44,12 +48,7 @@
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
-            <artifactId>hutool-core</artifactId>
-            <version>5.8.26</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-json</artifactId>
+            <artifactId>hutool-all</artifactId>
             <version>5.8.26</version>
         </dependency>
         <!--***以上包在主应用已经引入，避免插件过大不会在打入jar包中***-->
@@ -88,16 +87,51 @@
                                     <exclude>org.springframework:spring-context</exclude>
                                     <exclude>org.springframework:spring-aop</exclude>
                                     <exclude>org.springframework:spring-expression</exclude>
-                                    <exclude>io.micrometer:micrometer-observation:jar</exclude>
-                                    <exclude>io.micrometer:micrometer-commons:jar</exclude>
+                                    <exclude>io.micrometer:micrometer-observation</exclude>
+                                    <exclude>io.micrometer:micrometer-commons</exclude>
                                     <exclude>jakarta.annotation:jakarta.annotation-api</exclude>
                                     <exclude>org.slf4j:slf4j-api</exclude>
                                     <exclude>org.projectlombok:lombok</exclude>
-                                    <exclude>cn.hutool:hutool-core</exclude>
-                                    <exclude>cn.hutool:hutool-json</exclude>
-                                    <exclude>org.springframework:spring-beans</exclude>
-                                    <exclude>io.micrometer:micrometer-observation</exclude>
-                                    <exclude>io.micrometer:micrometer-commons</exclude>
+                                    <exclude>cn.hutool:hutool-all</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-starter-test</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-starter</exclude>
+                                    <exclude>org.springframework.boot:spring-boot</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-autoconfigure</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-starter-logging</exclude>
+                                    <exclude>ch.qos.logback:logback-classic</exclude>
+                                    <exclude>ch.qos.logback:logback-core</exclude>
+                                    <exclude>org.apache.logging.log4j:log4j-to-slf4j</exclude>
+                                    <exclude>org.apache.logging.log4j:log4j-api</exclude>
+                                    <exclude>org.slf4j:jul-to-slf4j:jar</exclude>
+                                    <exclude>org.yaml:snakeyaml</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-test</exclude>
+                                    <exclude>org.springframework.boot:spring-boot-test-autoconfigure</exclude>
+                                    <exclude>com.jayway.jsonpath:json-path</exclude>
+                                    <exclude>jakarta.xml.bind:jakarta.xml.bind-api</exclude>
+                                    <exclude>jakarta.activation:jakarta.activation-api</exclude>
+                                    <exclude>net.minidev:json-smart</exclude>
+                                    <exclude>net.minidev:accessors-smart</exclude>
+                                    <exclude>org.ow2.asm:asm:jar</exclude>
+                                    <exclude>org.assertj:assertj-core</exclude>
+                                    <exclude>net.bytebuddy:byte-buddy</exclude>
+                                    <exclude>org.awaitility:awaitility</exclude>
+                                    <exclude>org.hamcrest:hamcrest</exclude>
+                                    <exclude>org.junit.jupiter:junit-jupiter</exclude>
+                                    <exclude>org.junit.jupiter:junit-jupiter-api</exclude>
+                                    <exclude>org.opentest4j:opentest4j</exclude>
+                                    <exclude>org.junit.platform:junit-platform-commons</exclude>
+                                    <exclude>org.apiguardian:apiguardian-api</exclude>
+                                    <exclude>org.junit.jupiter:junit-jupiter-params</exclude>
+                                    <exclude>org.junit.jupiter:junit-jupiter-engine</exclude>
+                                    <exclude>org.junit.platform:junit-platform-engine</exclude>
+                                    <exclude>org.mockito:mockito-core</exclude>
+                                    <exclude>net.bytebuddy:byte-buddy-agent</exclude>
+                                    <exclude>org.objenesis:objenesis</exclude>
+                                    <exclude>org.mockito:mockito-junit-jupiter</exclude>
+                                    <exclude>org.skyscreamer:jsonassert</exclude>
+                                    <exclude>com.vaadin.external.google:android-json</exclude>
+                                    <exclude>org.springframework:spring-test</exclude>
+                                    <exclude>org.xmlunit:xmlunit-core</exclude>
                                 </excludes>
                             </artifactSet>
                         </configuration>
