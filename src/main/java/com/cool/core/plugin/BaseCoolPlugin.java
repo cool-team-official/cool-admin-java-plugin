@@ -1,15 +1,20 @@
 package com.cool.core.plugin;
 
+import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.ObjUtil;
 import cn.hutool.json.JSONUtil;
 import com.cool.core.config.PluginJson;
 import com.cool.core.exception.CoolPreconditions;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Setter
 @Slf4j
@@ -31,6 +36,23 @@ public abstract class BaseCoolPlugin {
         if (ObjUtil.isNotEmpty(pluginJson)) {
             this.pluginJson = JSONUtil.toBean(pluginJson, PluginJson.class);
         }
+    }
+
+    /**
+     * 加载
+     */
+    public void loadPluginJson() {
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        Resource resource = resolver.getResource("classpath:plugin.json");
+        if (resource.exists()) {
+            try {
+                String jsonStr = IoUtil.read(resource.getInputStream(), StandardCharsets.UTF_8);
+                this.pluginJson = JSONUtil.toBean(jsonStr, PluginJson.class);
+                return;
+            } catch (IOException ignored) {
+            }
+        }
+        this.pluginJson = new PluginJson();
     }
 
     /**

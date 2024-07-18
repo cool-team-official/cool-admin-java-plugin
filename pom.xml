@@ -14,7 +14,6 @@
     <version>1.0.0</version>
 
     <properties>
-        <cool.plugin.name>my_cool_plugin</cool.plugin.name>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
